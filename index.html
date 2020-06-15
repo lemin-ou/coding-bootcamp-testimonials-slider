@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+
+        body {
+            padding: 0;
+            margin: 0;
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+
+        .floated-container {
+            width: 900px;
+            height: 500px;
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 15%;
+            top:30px;
+
+        }
+
+        .text {
+            width: 440px;
+            height: 200px;
+            font-size: 22px;
+            position: relative;
+            left: 100px;
+            top: 170px;
+            z-index: 4;
+        }
+
+        .image {
+            position: absolute;
+            right: 108px;
+            bottom: 127px;
+            width: 300px;
+            height: 300px;
+            z-index: 3;
+        }
+
+        .image img {
+            box-shadow: 1px 1px 10px hsl(240, 18%, 77%);
+            border-radius: 3px;
+        }
+
+        .bg-pattern {
+            position: absolute;
+            right: 30px;
+            bottom: 66px;
+            z-index: 2;
+        }
+
+        .controls {
+            width: 80px;
+            height: 40px;
+            border-radius: 20px 20px;
+            position: absolute;
+            right: 300px;
+            bottom: 80px;
+            background-color: whitesmoke;
+            box-shadow: 1px 1px 20px hsl(240, 18%, 77%);
+            z-index: 8;
+        }
+
+        .slide {
+            position: relative;
+            top: 12px;
+            width: 10px;
+            height: 13px;
+
+        }
+
+        .next {
+            right: 12px;
+            top: 15px;
+        }
+
+        .prev {
+            left: 12px;
+        }
+
+        .pattern-curve {
+            position: absolute;
+            bottom: -5px;
+        }
+
+        .pattern-quotes {
+            position: absolute;
+            left: 165px;
+            top: 126px;
+        }
+
+        @media (max-width: 500px) {
+            .floated-container {
+                width: 400px;
+                position: absolute;
+                max-height: 600px;
+                box-shadow: 6px 6px 15px hsl(240, 18%, 77%);
+                left: 45px;
+                top: 25px;
+
+            }
+
+            .text {
+                position: relative;
+                top: 57%;
+                width: 330px;
+                left: 35px;
+                font-size: 17px;
+                text-align: center;
+
+            }
+
+            .image {
+                /*position: initial;*/
+                z-index: 3;
+                top:33px;
+                left: 110px;
+
+            }
+            .image img {
+                width: 185px;
+                height: 185px;
+            }
+
+            .pattern-quotes {
+              top: 260px;
+                left: 172px;
+            }
+            .pattern-quotes img {
+                width: 55px;
+                height: 45px;
+            }
+
+            .bg-pattern {
+                z-index: 2;
+            }
+            .bg-pattern img {
+                width: 230px;
+                height: 230px;
+                position: relative;
+                top: -190px;
+                left: -50px;
+                /*transform: rotate(-12deg);*/
+            }
+
+            .pattern-curve img{
+                width: 200px;
+                height: 65px;
+            }
+
+
+            .controls {
+                  top: 205px;
+                left: 170px;
+                width: 60px;
+                height: 30px;
+            }
+
+            .slide {
+                 top: 10px;
+            width: 8px;
+            height: 10px;
+            }
+            .next {
+                 top: 11px;
+                 right: 10px;
+            }
+            .prev {
+                top: 5px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!--  “ I’ve been interested in coding for a while but never taken the jump, until now. -->
+<!--  I couldn’t recommend this course enough. I’m now in the job of my dreams and so -->
+<!--  excited about the future. ”-->
+
+<!--  Tanya Sinclair-->
+<!--  UX Engineer-->
+
+<!--  “ If you want to lay the best foundation possible I’d recommend taking this course. -->
+<!--  The depth the instructors go into is incredible. I now feel so confident about -->
+<!--  starting up as a professional developer. ”-->
+
+<!--  John Tarkpor-->
+<!--  Junior Front-end Developer-->
+<!--  -->
+<!--  <div class="attribution">-->
+<!--    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. -->
+<!--    Coded by <a href="#">Your Name Here</a>.-->
+<!--  </div>-->
+
+
+<div class="floated-container">
+    <div class="pattern-quotes">
+        <img src="images/pattern-quotes.svg" width="85" height="65">
+    </div>
+    <div class="text">
+            <span>
+                 “ I’ve been interested in coding for a while but never taken the jump, until now.
+  I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+  excited about the future. ”
+            </span>
+        <p class="author"><b style="font-size: 14px;">Tanya Sinclair</b><br>
+            <span style="font-weight: 500;font-size: 14px; color: hsl(240, 18%, 77%);">UX Engineer</span></p>
+
+    </div>
+    <div class="image">
+        <img src="images/image-tanya.jpg" width="325" height="325"/>
+    </div>
+    <div class="bg-pattern">
+        <img src="images/pattern-bg.svg" width="420" height="395">
+    </div>
+    <div class="controls">
+        <img class="prev slide" accesskey="S" src="images/icon-prev.svg">
+        <img class="next slide" src="images/icon-next.svg" style="float: right;">
+    </div>
+    <div class="pattern-curve">
+        <img src="images/pattern-curve.svg" width="420" height="90">
+    </div>
+</div>
+<script>
+    // slides
+    var prev = document.querySelector(".prev");
+    var next = document.querySelector(".next");
+    var index = 0;
+    var text2 = "\“ If you want to lay the best foundation possible I’d recommend taking this<br/> course. " +
+        "The depth the instructors go into is incredible. I now feel so confident about " +
+        "starting up as a professional developer. \”";
+    var author = "<p class=\"author\"><b style=\"font-size: 14px;\">John Tarkpor </b><br/>" +
+        "<span  style=\"font-weight: 500;font-size: 14px; color: hsl(240, 18%, 77%);\">Junior Front-end Developer</span></p>";
+
+    var content = [[document.querySelector(".text").children[0].innerHTML, "images/image-tanya.jpg",
+        document.querySelector(".text").children[1].innerHTML],
+        [text2, "images/image-john.jpg", author]]
+    next.addEventListener("click", changeSlide);
+    document.onkeydown = changeSlideUsingKey;
+    prev.addEventListener("click", changeSlide);
+
+    e = e || window.event;
+
+    function changeSlideUsingKey(e) {
+        if (e.keyCode == 37 || e.keyCode == 39)
+            changeSlide();
+    }
+
+    function changeSlide() {
+        if (index === 0) {
+            index++;
+        } else {
+            index--;
+        }
+        document.querySelector(".image").children[0].setAttribute("src", content[index][1]);
+        document.querySelector(".text").children[0].innerHTML = content[index][0];
+        document.querySelector(".text").children[1].innerHTML = content[index][2];
+
+    }
+</script>
+</body>
+</html>
